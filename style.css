@@ -648,6 +648,14 @@ h1 {
     font-size: 0.8rem;
   }
 
+  .key-backspace {
+    font-size: 1.5rem;
+  }
+
+  .key-backspace {
+    font-size: 1.3rem;
+  }
+
   .suggestion-word {
     font-size: 0.95rem;
     letter-spacing: 2px;
