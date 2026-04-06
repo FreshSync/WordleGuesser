@@ -45,6 +45,7 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .app {
