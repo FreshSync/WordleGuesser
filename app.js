@@ -305,6 +305,16 @@ function renderSuggestions() {
     const zipf = (solver.frequencies && solver.frequencies[item.word]) || 0;
     const barPercent = Math.min((zipf / MAX_ZIPF) * 100, 100);
 
+    // Color based on popularity: green (high), yellow (mid), red (low)
+    let barColor;
+    if (zipf >= 4.0) {
+      barColor = "#6aaa64"; // green
+    } else if (zipf >= 2.5) {
+      barColor = "#c9b458"; // yellow
+    } else {
+      barColor = "#d35454"; // red
+    }
+
     el.innerHTML =
       '<div class="suggestion-top">' +
       '<span class="suggestion-rank">' +
@@ -322,7 +332,9 @@ function renderSuggestions() {
       '<div class="suggestion-pop-track">' +
       '<div class="suggestion-pop-fill" style="width:' +
       barPercent +
-      '%"></div>' +
+      "%;background:" +
+      barColor +
+      '"></div>' +
       "</div>" +
       "</div>";
 
